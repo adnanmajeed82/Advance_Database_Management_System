@@ -1,14 +1,9 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ProgramViewSet, StudentViewSet
 
-
-# Create router
-router = DefaultRouter()
-router.register(r'programs', ProgramViewSet, basename='program')
-router.register(r'students', StudentViewSet, basename='student')
-
+from django.contrib import admin
+from django.urls import path,include
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('admin/', admin.site.urls),
+    path('api/',include('app.urls'))
+
 ]
