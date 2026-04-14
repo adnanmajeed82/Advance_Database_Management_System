@@ -4,7 +4,9 @@ Advance_Database_Management_System
 
 🚀 Django REST Framework (DRF) API Setup Guide
 📌 Step-by-Step Installation (Windows CMD)
+
 🔹 1. Create Virtual Environment
+
 Open Command Prompt
 Run:
 python -m venv env
