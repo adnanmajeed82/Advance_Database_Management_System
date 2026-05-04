@@ -35,5 +35,52 @@ activate
 Drag and drop the complete api folder into VS Code
 Or run:
  
+drf-yasg - Yet another Swagger generator
 
+Usage
+0. Installation
+The preferred installation method is directly from pypi:
+
+pip install -U drf-yasg
+
+
+1. Quickstart
+In settings.py:
+
+INSTALLED_APPS = [
+   ...
+   'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
+   'drf_yasg',
+   ...
+]
+
+main urls.py
+
+
+from django.urls import re_path
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+...
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Snippets API",
+      default_version='v1',
+      description="Test description",
+      terms_of_service="https://www.google.com/policies/terms/",
+      contact=openapi.Contact(email="contact@snippets.local"),
+      license=openapi.License(name="BSD License"),
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
+
+urlpatterns = [
+   path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+   ...
+]
 <img width="2550" height="3300" alt="Advance Database Managment System Course Outline" src="https://github.com/user-attachments/assets/66dbd4f4-3e9e-4288-8b4d-00792526a8cf" />
