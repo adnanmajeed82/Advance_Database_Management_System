@@ -132,7 +132,6 @@ urlpatterns = [
 python manage.py runserver
 ```
 
----
 
 ## 🌐 API Documentation URLs
 
@@ -160,16 +159,10 @@ api/
 │   └── urls.py
 │
 │── manage.py
-```
-
----
 
 ## 🖼️ Course Outline
 
 ![Course Outline](https://github.com/user-attachments/assets/66dbd4f4-3e9e-4288-8b4d-00792526a8cf)
-
----
-
 ## 💡 Notes
 
 - Always activate the virtual environment before working  
@@ -178,9 +171,6 @@ api/
 pip freeze > requirements.txt
 ```
 - Keep your API modular using apps  
-
----
-
 ## 📌 Author
 
 Adnan Majeed
